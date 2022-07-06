@@ -16,7 +16,7 @@ function getBooks() {
         xhr.send();
     });
 }
-
+// https://juejin.cn/post/6968796449618264072
 function addBook(formdate) {
     return new Promise((resolve, reject) => {
         let fd = new FormData(formdate)
