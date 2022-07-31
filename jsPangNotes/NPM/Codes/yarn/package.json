@@ -1,0 +1,11 @@
+{
+  "name": "eduwork",
+  "version": "1.0.11",
+  "description": "this is yarn test",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "jquery": "^3.5.1"
+  }
+}
