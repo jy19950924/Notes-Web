@@ -25,7 +25,30 @@ export class Rating extends HTMLElement {
 
     connectedCallback() {
         console.log('Rating added to DOM');
+
+        if (!this.rating) {
+            this.rating = 0;
+
+        }
+        if (!this.maxRating || this.maxRating < 0) {
+            this.maxRating = 5;
+        }
     }
+
+    get maxRating() {
+        return this.getAttribute('max-rating');
+    }
+    set maxRating(value) {
+        this.setAttribute('max-rating', value);
+    }
+
+    get rating() {
+        return this.getAttribute('rating');
+    }
+    set rating(value) {
+        this.setAttribute('rating', value);
+    }
+
     adoptedCallback() {
         console.log('Rating was moved into a new DOM');
     }
@@ -36,6 +59,15 @@ export class Rating extends HTMLElement {
     attributeChangedCallback(name, oldVal, newVal) {
         if (oldVal !== newVal) {
             console.log(`${name} changed from ${oldVal} to ${newVal}`)
+            // switch(name){
+            //     case 'rating':{
+            //         this.rating = newVal;
+            //         break;
+            //     }
+            //     case 'max-rating':{
+
+            //     }
+            // }
         }
     }
 }
