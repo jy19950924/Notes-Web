@@ -5,11 +5,11 @@ template.innerHTML = `
     <p>Rating</p>
 
     <div class="rating-stars">
-        <div class="rating-star star-1"></div>
-        <div class="rating-star star-2"></div>
-        <div class="rating-star star-3"></div>
-        <div class="rating-star star-4"></div>
-        <div class="rating-star star-5"></div>
+        <div class="rating-star star-1">1</div>
+        <div class="rating-star star-2">2</div>
+        <div class="rating-star star-3">3</div>
+        <div class="rating-star star-4">4</div>
+        <div class="rating-star star-5">5</div>
     </div>
 </div>
 `
@@ -21,10 +21,13 @@ export class Rating extends HTMLElement {
 
     constructor() {
         super();
+        const shadowRoot = this.attachShadow({ mode: 'closed' });
+        shadowRoot.appendChild(template.content.cloneNode(true));
     }
 
     connectedCallback() {
         console.log('Rating added to DOM');
+        console.log('rating maxRatin:', this.rating, this.maxRating)
 
         if (!this.rating) {
             this.rating = 0;
@@ -36,16 +39,20 @@ export class Rating extends HTMLElement {
     }
 
     get maxRating() {
+        console.log("maxRating get")
         return this.getAttribute('max-rating');
     }
     set maxRating(value) {
+        console.log("maxRating set")
         this.setAttribute('max-rating', value);
     }
 
     get rating() {
+        console.log("rating get func")
         return this.getAttribute('rating');
     }
     set rating(value) {
+        console.log("rating set func")
         this.setAttribute('rating', value);
     }
 
@@ -59,15 +66,16 @@ export class Rating extends HTMLElement {
     attributeChangedCallback(name, oldVal, newVal) {
         if (oldVal !== newVal) {
             console.log(`${name} changed from ${oldVal} to ${newVal}`)
-            // switch(name){
-            //     case 'rating':{
-            //         this.rating = newVal;
-            //         break;
-            //     }
-            //     case 'max-rating':{
-
-            //     }
-            // }
+            switch (name) {
+                case 'rating': {
+                    this.rating = newVal;
+                    break;
+                }
+                case 'max-rating': {
+                    this.matRating = newVal;
+                    break;
+                }
+            }
         }
     }
 }
