@@ -1,9 +1,10 @@
+
+
 const template = document.createElement('template')
 template.innerHTML = `
+
 <div>
-
     <p>Rating</p>
-
     <div class="rating-stars">
         <div class="rating-star star-1">1</div>
         <div class="rating-star star-2">2</div>
@@ -13,6 +14,7 @@ template.innerHTML = `
     </div>
 </div>
 `
+
 
 export class Rating extends HTMLElement {
     static get observedAttributes() {
