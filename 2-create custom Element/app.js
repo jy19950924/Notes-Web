@@ -1,2 +1,2 @@
-import { Rating } from "./module";
-import "./style.css"
+import { Rating } from "./module/script";
+import './module/style.css'

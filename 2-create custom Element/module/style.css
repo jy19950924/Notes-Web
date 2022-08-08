@@ -8,7 +8,7 @@
 .rating-star {
     width: 100px;
     height: 100px;
-    background-image: url(./assert/star_on.png);
+    background-image: url(../assert/star_on.png);
     background-position: center;
     background-size: cover;
 }

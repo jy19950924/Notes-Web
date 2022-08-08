@@ -25,11 +25,18 @@ module.exports = {
                         options: {
                             limit: 8 * 1024,
                             esModule: false,
-                            name: '[hash:10].[ext]'
+                            name: 'star_on.png'
                         }
                     }
                 ]
 
+            },
+            {
+                exclude: /\.(css|js|html|less)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[hash:10].[ext]'
+                }
             },
             {
                 test: /\.html/,

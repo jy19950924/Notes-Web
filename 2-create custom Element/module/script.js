@@ -1,20 +1,11 @@
 
+import htmlTemplate from './index.html'
+import './style.css'
+
 
 const template = document.createElement('template')
-template.innerHTML = `
-
-<div>
-    <p>Rating</p>
-    <div class="rating-stars">
-        <div class="rating-star star-1">1</div>
-        <div class="rating-star star-2">2</div>
-        <div class="rating-star star-3">3</div>
-        <div class="rating-star star-4">4</div>
-        <div class="rating-star star-5">5</div>
-    </div>
-</div>
-`
-
+template.innerHTML = htmlTemplate
+console.log(template)
 
 export class Rating extends HTMLElement {
     static get observedAttributes() {
