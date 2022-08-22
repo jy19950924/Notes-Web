@@ -1,4 +1,0 @@
-{
-  "presets": ["es2015", "stage-2"],  //设置转码规则
-  "plugins": ["transform-runtime"]  //设置插件
-}

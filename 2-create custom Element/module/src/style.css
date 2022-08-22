@@ -1,0 +1,14 @@
+.rating-stars {
+    display: flex;
+    margin: 10px 30px;
+    padding: 5px 0;
+    align-items: center;
+}
+
+.rating-star {
+    width: 100px;
+    height: 100px;
+    background-image: url("../assert/star_on.png");
+    background-position: center;
+    background-size: cover;
+}

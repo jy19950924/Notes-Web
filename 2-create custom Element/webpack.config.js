@@ -32,13 +32,6 @@ module.exports = {
 
             },
             {
-                exclude: /\.(css|js|html|less)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[hash:10].[ext]'
-                }
-            },
-            {
                 test: /\.html/,
                 loader: 'html-loader'
             }
