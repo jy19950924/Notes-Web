@@ -37,3 +37,24 @@
 4. setState函数为异步函数
     所以在使用setState获取state的值可能会出现错误。
     在异步状态中，为同步执行；而在同步状态中，为异步执行。由于生命周期影响导致。
+
+
+## 七. 组件间的通信
+1. 属性验证
+类属性 className.propTypes
+```js
+import propTypeTip as prop-types
+...
+Navbar.propTypes={
+    title:propTypeTip.string,//验证是不是string,
+    leftshow:propTypeTip.bool //验证是不是bool
+}
+```
+**扩展**：类属性 
+```js
+class Test{
+    a =1
+    static a =100 //类属性 ES7优化
+}
+Test.b = 200 //类属性
+```
